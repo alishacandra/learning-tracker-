@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #f8f6ff;
+  background: #f7f4ff;
   padding: 20px;
   color: #333;
 }
@@ -16,7 +16,7 @@ body {
   margin: auto;
 }
 
-/* =============== HEADER =============== */
+/* HEADER */
 .header {
   text-align: center;
   margin-bottom: 25px;
@@ -28,21 +28,22 @@ body {
 }
 
 .header p {
-  color: #777;
+  color: #666;
 }
 
-/* =============== INPUT SECTION =============== */
+/* INPUT SECTION */
 .input-section {
-  background: white;
+  background: #ffffff;
   padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 5px 14px rgba(0,0,0,0.05);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   margin-bottom: 20px;
 }
 
 .input-section h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
   color: #6a4bc9;
-  margin-bottom: 15px;
 }
 
 .inputs {
@@ -53,62 +54,61 @@ body {
 
 .input {
   padding: 12px;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid #ddd;
   flex: 1;
-  min-width: 200px;
+  min-width: 180px;
 }
 
 .btn {
+  padding: 12px;
   background: #6a4bc9;
-  color: white;
-  padding: 12px 18px;
   border: none;
-  border-radius: 12px;
+  color: white;
+  border-radius: 10px;
   cursor: pointer;
-  transition: 0.2s;
+  min-width: 140px;
 }
 
 .btn:hover {
   background: #5437ad;
 }
 
-/* =============== STATISTICS =============== */
+/* STATS BOX */
 .stats-box {
-  background: white;
+  background: #ffffff;
   padding: 20px;
-  border-radius: 18px;
+  border-radius: 15px;
   margin-bottom: 20px;
-  box-shadow: 0 5px 14px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .stats-box p {
-  margin-bottom: 8px;
-  font-size: 15px;
+  margin-bottom: 6px;
 }
 
 .highlight {
   color: #6a4bc9;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-/* =============== LEARNING LIST =============== */
+/* LIST SECTION */
 .list-section {
-  background: white;
+  background: #ffffff;
   padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 5px 14px rgba(0,0,0,0.05);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .list-section h2 {
   color: #6a4bc9;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .searchbar {
   width: 100%;
   padding: 12px;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid #ddd;
   margin-bottom: 15px;
 }
@@ -118,47 +118,39 @@ body {
 }
 
 .item {
-  display: flex;
-  justify-content: space-between;
-  background: #f5f2ff;
+  background: #f2edff;
   padding: 14px;
-  border-radius: 15px;
+  border-radius: 12px;
   margin-bottom: 10px;
   border-left: 5px solid #6a4bc9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .item.completed {
-  opacity: 0.6;
+  opacity: 0.55;
   text-decoration: line-through;
 }
 
-.item span {
-  font-weight: 500;
-}
-
-/* =============== BUTTON INSIDE LIST =============== */
 .complete-btn {
+  padding: 8px 12px;
+  border: none;
   background: #6a4bc9;
   color: white;
-  padding: 8px 14px;
-  border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
 }
 
 .complete-btn:hover {
   background: #5437ad;
 }
 
-/* =============== RESPONSIVE =============== */
+/* RESPONSIVE */
 @media (max-width: 600px) {
-  .inputs {
-    flex-direction: column;
-  }
-
   .item {
     flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
   }
 
