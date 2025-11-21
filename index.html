@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDGs Map Indonesia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>SDGs Map Indonesia</h1>
+        <p class="subtitle">Edukasi Indonesia Emas 2045</p>
+    </header>
+
+    <!-- SEARCH BAR -->
+    <div class="search-container">
+        <input type="text" id="searchProv" placeholder="Cari provinsi..." autocomplete="off">
+        <button id="searchBtn">Cari</button>
+    </div>
+
+    <!-- MAP SECTION -->
+    <div class="map-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Blank_Map_Indonesia.png" alt="Map Indonesia">
+        <p class="map-note">*Klik cari untuk melihat data SDGs provinsi</p>
+    </div>
+
+    <!-- RESULT BOX -->
+    <div id="resultBox" class="hide">
+        <h2 id="provName"></h2>
+
+        <div class="info-row">
+            <p><strong>Prioritas SDGs:</strong></p>
+            <ul id="provSDGs"></ul>
+        </div>
+
+        <p><strong>Populasi:</strong> <span id="provPop"></span></p>
+        <p><strong>Catatan:</strong> <span id="provNote"></span></p>
+    </div>
+
+    <footer>
+        <p>© 2025 SDGs Education Project — Minimalist Edition</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
