@@ -1,47 +1,149 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDGs Map Indonesia</title>
+    <title>Aesthetic Learning Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- ==================== HEADER ==================== -->
     <header>
-        <h1>SDGs Map Indonesia</h1>
-        <p class="subtitle">Edukasi Indonesia Emas 2045</p>
+        <h1>🌸 Aesthetic Learning Tracker</h1>
+        <p class="subtitle">Belajar konsisten menuju Indonesia Emas 2045</p>
     </header>
 
-    <!-- SEARCH BAR -->
-    <div class="search-container">
-        <input type="text" id="searchProv" placeholder="Cari provinsi..." autocomplete="off">
-        <button id="searchBtn">Cari</button>
-    </div>
 
-    <!-- MAP SECTION -->
-    <div class="map-box">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Blank_Map_Indonesia.png" alt="Map Indonesia">
-        <p class="map-note">*Klik cari untuk melihat data SDGs provinsi</p>
-    </div>
+    <!-- ==================== THEME SWITCHER ==================== -->
+    <section class="theme-switcher">
+        <h3>🎨 Pilih Tema</h3>
+        <div class="theme-options">
+            <button class="theme-btn" data-theme="pink"></button>
+            <button class="theme-btn" data-theme="lilac"></button>
+            <button class="theme-btn" data-theme="blue"></button>
+            <button class="theme-btn" data-theme="cream"></button>
+        </div>
+    </section>
 
-    <!-- RESULT BOX -->
-    <div id="resultBox" class="hide">
-        <h2 id="provName"></h2>
 
-        <div class="info-row">
-            <p><strong>Prioritas SDGs:</strong></p>
-            <ul id="provSDGs"></ul>
+    <!-- ==================== DAILY INPUT ==================== -->
+    <section class="daily-input">
+        <h2>📝 Catatan Belajar Hari Ini</h2>
+
+        <label>Topik Belajar</label>
+        <input type="text" id="topicInput" placeholder="Misal: Matematika - Integral">
+
+        <label>Durasi Belajar (menit)</label>
+        <input type="number" id="durationInput" placeholder="Contoh: 45">
+
+        <label>Kategori Belajar</label>
+        <select id="categoryInput">
+            <option value="Bahasa">📘 Bahasa</option>
+            <option value="Matematika">🧮 Matematika</option>
+            <option value="Sains">🧪 Sains</option>
+            <option value="Kreativitas">🎨 Kreativitas</option>
+            <option value="Literasi">📚 Literasi</option>
+        </select>
+
+        <label>Mood Belajar</label>
+        <select id="moodInput">
+            <option value="Senang">😊 Senang</option>
+            <option value="Biasa">🙂 Biasa</option>
+            <option value="Fokus">😐 Fokus</option>
+            <option value="Lelah">🥱 Lelah</option>
+            <option value="Stres">😣 Stres</option>
+        </select>
+
+        <label>Catatan Tambahan</label>
+        <textarea id="noteInput" placeholder="Tuliskan detailnya..."></textarea>
+
+        <button id="saveLogBtn">Simpan Catatan</button>
+    </section>
+
+
+    <!-- ==================== SEARCH ==================== -->
+    <section class="search-box">
+        <h2>🔍 Cari Catatan Belajar</h2>
+        <input type="text" id="searchInput" placeholder="Cari berdasarkan topik, mood, kategori...">
+    </section>
+
+
+    <!-- ==================== WEEKLY PROGRESS ==================== -->
+    <section class="progress-section">
+        <h2>📅 Weekly Learning Progress</h2>
+        <div class="progress-bar">
+            <div class="progress-fill" id="weeklyProgress"></div>
+        </div>
+        <p id="weeklyProgressText">0 / 300 menit minggu ini</p>
+    </section>
+
+
+    <!-- ==================== STREAK ==================== -->
+    <section class="streak-section">
+        <h2>🔥 Streak Belajar</h2>
+        <p class="streak-count"><span id="streakDays">0</span> Hari Beruntun</p>
+    </section>
+
+
+    <!-- ==================== GOALS ==================== -->
+    <section class="goals-section">
+        <h2>🎯 Targets Belajar</h2>
+
+        <div class="goal-input-box">
+            <input type="text" id="goalText" placeholder="Tulis target belajar...">
+            <button id="addGoalBtn">Tambah</button>
         </div>
 
-        <p><strong>Populasi:</strong> <span id="provPop"></span></p>
-        <p><strong>Catatan:</strong> <span id="provNote"></span></p>
-    </div>
+        <ul id="goalList"></ul>
+    </section>
 
-    <footer>
-        <p>© 2025 SDGs Education Project — Minimalist Edition</p>
-    </footer>
 
+    <!-- ==================== ACHIEVEMENTS ==================== -->
+    <section class="achievement-section">
+        <h2>🏆 Pencapaian</h2>
+        <div id="achievementBox"></div>
+    </section>
+
+
+    <!-- ==================== STUDY TIMER ==================== -->
+    <section class="timer-section">
+        <h2>⏰ Study Timer (Pomodoro)</h2>
+        <p id="timerDisplay">25:00</p>
+        <button id="startTimer">Mulai</button>
+        <button id="resetTimer">Reset</button>
+    </section>
+
+
+    <!-- ==================== STATISTIK ==================== -->
+    <section class="statistic-section">
+        <h2>📊 Statistik Belajar</h2>
+        <div class="stats-box">
+            <p>Total Jam Minggu Ini: <span id="weeklyHours">0</span> jam</p>
+            <p>Kategori Terbanyak: <span id="topCategory">-</span></p>
+            <p>Mood Terbanyak: <span id="topMood">-</span></p>
+            <p>Hari Tersibuk: <span id="busiestDay">-</span></p>
+        </div>
+    </section>
+
+
+    <!-- ==================== DAILY LOG LIST ==================== -->
+    <section class="log-section">
+        <h2>📘 Riwayat Belajar</h2>
+        <div id="logContainer"></div>
+    </section>
+
+
+    <!-- ==================== DATA BACKUP ==================== -->
+    <section class="backup-section">
+        <h2>💾 Backup & Restore Data</h2>
+        <button id="downloadData">Download Data</button>
+        <input type="file" id="uploadData" accept=".json">
+    </section>
+
+
+    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
+
 </body>
 </html>
